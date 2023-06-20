@@ -173,7 +173,7 @@ def calorie():
                     flash(f'You are taking {diff} more calories than required')
                     return render_template('result.html',data=data)
             except:
-                return redirect('calorie.html')
+                return render_template('calorie.html')
         return render_template('calorie.html')
     else:
         return redirect(url_for('login'))
