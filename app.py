@@ -218,6 +218,7 @@ def view(nid):
         cursor.close()
         diff = data[5]
         if diff < 0:
+            diff = abs(diff)
             flash(f'You need to take {diff} more calories')
             return render_template('result.html',data=data)
         else:
