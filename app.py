@@ -161,7 +161,7 @@ def calorie():
                     flash('Enter the enter details correctly.')
                     return redirect(url_for('calorie'))
                 diff = cal-bmr
-                cursor.execute('insert into userCalCount(weight, height, age, gender, bmr, final_result, food_cal, username) values(%s,%s,%s,%s,%s,%s,%s,%s)',[weight, height, age, gender, bmr, diff, cal, username])
+                cursor.execute('insert into usercalcount(weight, height, age, gender, bmr, final_result, food_cal, username) values(%s,%s,%s,%s,%s,%s,%s,%s)',[weight, height, age, gender, bmr, diff, cal, username])
                 mydb.commit()
                 diff = abs(diff)
                 data = [weight, height, age, gender, bmr, diff, cal, username]
