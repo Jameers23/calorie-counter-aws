@@ -156,7 +156,7 @@ def calorie():
                 cal = 0.0
                 try:
                     for i in range(0,8):  
-                        cal += (quantity[i]*((calories[item[i].lower()]))
+                        cal += (quantity[i]*((calories[item[i].lower()])))
                 except:
                     flash('Enter the enter details correctly.')
                     return redirect(url_for('calorie'))
