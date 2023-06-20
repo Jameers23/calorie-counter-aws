@@ -201,7 +201,7 @@ def history():
 def delete(nid):
     if session.get('user'):
         cursor=mydb.cursor(buffered=True)
-        cursor.execute('delete from userCalCount where cid=%s',[nid])
+        cursor.execute('delete from usercalcount where cid=%s',[nid])
         mydb.commit()
         cursor.close()
         flash('Record Deleted.')
@@ -213,7 +213,7 @@ def delete(nid):
 def view(nid):
     if session.get('user'):
         cursor=mydb.cursor(buffered=True)
-        cursor.execute('select weight, height, age, gender, bmr, final_result, food_cal, username from userCalCount where cid=%s',[nid])
+        cursor.execute('select weight, height, age, gender, bmr, final_result, food_cal, username from usercalcount where cid=%s',[nid])
         data = cursor.fetchone()
         cursor.close()
         diff = data[5]
